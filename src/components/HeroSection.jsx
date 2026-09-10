@@ -1,11 +1,45 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { ChevronDown, Calendar, MapPin } from 'lucide-react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 export default function HeroSection() {
   const ref = useRef(null);
   const prefersReducedMotion = useReducedMotion();
+
+  // Gentle auto-scroll assist: if the user hasn't scrolled after 4.5 seconds, guide them down to #invitation
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+
+    let userHasScrolled = false;
+
+    const onUserScroll = () => {
+      userHasScrolled = true;
+      window.removeEventListener('scroll', onUserScroll);
+      window.removeEventListener('wheel', onUserScroll);
+      window.removeEventListener('touchmove', onUserScroll);
+    };
+
+    window.addEventListener('scroll', onUserScroll, { passive: true });
+    window.addEventListener('wheel', onUserScroll, { passive: true });
+    window.addEventListener('touchmove', onUserScroll, { passive: true });
+
+    const timer = setTimeout(() => {
+      if (!userHasScrolled && window.scrollY < 60) {
+        const target = document.getElementById('invitation');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 4500);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', onUserScroll);
+      window.removeEventListener('wheel', onUserScroll);
+      window.removeEventListener('touchmove', onUserScroll);
+    };
+  }, [prefersReducedMotion]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -185,20 +219,58 @@ export default function HeroSection() {
           </span>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Prominent Primary CTA Button: View Invitation Details */}
+        <motion.div
+          className="mt-1 sm:mt-2 mb-2 sm:mb-3"
+          initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
+          animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+          transition={{ delay: prefersReducedMotion ? 0.35 : 1.35, duration: 0.8 }}
+        >
+          <a
+            href="#invitation"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('invitation')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="btn-primary btn-shimmer group relative inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 rounded-full text-xs sm:text-sm uppercase tracking-[2.2px] font-semibold text-navy shadow-xl shadow-black/40 hover:shadow-[0_8px_30px_rgba(201,168,76,0.45)] active:scale-95 transition-all duration-300 border border-champagne-light/70"
+            aria-label="Scroll down to view wedding invitation details"
+          >
+            <span>View Invitation Details</span>
+            <motion.span
+              animate={prefersReducedMotion ? {} : { y: [0, 3, 0] }}
+              transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+              className="text-navy flex items-center"
+            >
+              <ChevronDown size={16} strokeWidth={2.5} />
+            </motion.span>
+          </a>
+        </motion.div>
+
+        {/* Elegant Animated Mouse Scroll Guide */}
         <motion.a
           href="#invitation"
-          className="flex flex-col items-center gap-0.5 text-white/80 hover:text-champagne transition-colors duration-300 pt-0.5"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('invitation')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="flex flex-col items-center gap-1.5 text-champagne-light/90 hover:text-champagne transition-colors duration-300 pt-0.5 cursor-pointer group select-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: prefersReducedMotion ? 0.4 : 1.45, duration: 0.7 }}
+          transition={{ delay: prefersReducedMotion ? 0.4 : 1.55, duration: 0.7 }}
         >
-          <span className="font-sans text-[8px] tracking-[2.5px] uppercase">Scroll</span>
+          <span className="font-sans text-[9px] sm:text-[10px] tracking-[2.8px] uppercase font-medium group-hover:tracking-[3.5px] transition-all text-white/90">
+            Scroll To Explore
+          </span>
           <motion.div
-            animate={prefersReducedMotion ? {} : { y: [0, 4, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-5 h-7 rounded-full border border-champagne/60 flex items-start justify-center p-1 shadow-sm group-hover:border-champagne"
+            animate={prefersReducedMotion ? {} : { y: [0, 3, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <ChevronDown size={14} className="text-champagne" />
+            <motion.div
+              className="w-1 h-2 rounded-full bg-champagne"
+              animate={prefersReducedMotion ? {} : { y: [0, 8, 0], opacity: [1, 0.2, 1] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            />
           </motion.div>
         </motion.a>
       </motion.div>
