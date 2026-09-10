@@ -373,6 +373,35 @@ body {
   clip-path: inset(0 0% 0 0);
 }
 
+/* ── Luxury Card Gatefold / Curtain Opening ───────────────────────── */
+.curtain-panel-left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50.5%;
+  background:
+    radial-gradient(ellipse 90% 80% at 75% 45%, rgba(245,237,211,0.94) 0%, transparent 68%),
+    radial-gradient(ellipse 140% 120% at 50% 50%, #EEE8D4 0%, #E2D9C4 55%, #D4CAAE 100%);
+  border-right: 1px solid rgba(201, 168, 76, 0.45);
+  box-shadow: 4px 0 24px rgba(13, 27, 42, 0.25);
+  will-change: transform;
+}
+
+.curtain-panel-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50.5%;
+  background:
+    radial-gradient(ellipse 90% 80% at 25% 45%, rgba(245,237,211,0.94) 0%, transparent 68%),
+    radial-gradient(ellipse 140% 120% at 50% 50%, #EEE8D4 0%, #E2D9C4 55%, #D4CAAE 100%);
+  border-left: 1px solid rgba(201, 168, 76, 0.45);
+  box-shadow: -4px 0 24px rgba(13, 27, 42, 0.25);
+  will-change: transform;
+}
+
 /* ── Section Divider ─────────────────────────────────────────────────── */
 .section-divider {
   width: 100%;
