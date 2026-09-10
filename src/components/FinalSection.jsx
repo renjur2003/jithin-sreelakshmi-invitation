@@ -166,15 +166,15 @@ export default function FinalSection() {
             href={whatsappBlessingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 border border-emerald-400/40 text-white font-sans text-[11px] sm:text-xs tracking-[2px] uppercase font-semibold shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 active:scale-[0.97]"
+            className="btn-primary group w-full sm:w-auto shadow-xl shadow-black/40 hover:shadow-[0_8px_32px_rgba(201,168,76,0.4)]"
           >
-            <MessageCircle size={15} className="shrink-0" />
-            <span>Send Wishes & Blessings</span>
+            <MessageCircle size={15} className="shrink-0 text-navy group-hover:scale-110 transition-transform duration-300" />
+            <span>Send Wishes &amp; Blessings</span>
           </a>
 
           <button
             onClick={handleShare}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-champagne/40 hover:border-champagne text-white font-sans text-[11px] sm:text-xs tracking-[2px] uppercase font-medium shadow-lg transition-all duration-300 active:scale-[0.97] cursor-pointer"
+            className="btn-secondary group w-full sm:w-auto bg-white/10 hover:bg-white/20 border-champagne/50 hover:border-champagne text-white hover:text-white shadow-lg cursor-pointer"
           >
             {copied ? (
               <>
@@ -183,7 +183,7 @@ export default function FinalSection() {
               </>
             ) : (
               <>
-                <Share2 size={15} className="text-champagne-light shrink-0" />
+                <Share2 size={15} className="text-champagne-light group-hover:scale-110 transition-transform duration-300 shrink-0" />
                 <span>Share Invitation</span>
               </>
             )}

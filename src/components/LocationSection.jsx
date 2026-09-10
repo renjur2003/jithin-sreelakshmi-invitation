@@ -102,9 +102,9 @@ export default function LocationSection() {
                 href={loc.mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-lg border border-champagne/40 hover:border-champagne bg-champagne/10 hover:bg-champagne/20 text-champagne-light hover:text-white font-sans text-xs tracking-[2px] uppercase font-medium transition-all duration-300 shadow-sm hover:shadow-[0_4px_24px_rgba(201,168,76,0.25)] active:scale-[0.97] cursor-pointer"
+                className="btn-primary group w-full shadow-lg shadow-black/30 hover:shadow-[0_6px_24px_rgba(201,168,76,0.35)]"
               >
-                <Navigation size={13} />
+                <Navigation size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300 shrink-0 text-navy" />
                 <span>Open in Google Maps</span>
               </a>
             </motion.div>

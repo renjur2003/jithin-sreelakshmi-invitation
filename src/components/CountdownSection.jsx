@@ -197,16 +197,16 @@ export default function CountdownSection() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleCalendarClick}
-            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-champagne/15 hover:bg-champagne/25 border border-champagne/45 hover:border-champagne text-champagne-light hover:text-white transition-all duration-300 font-sans text-[11px] sm:text-xs tracking-[2px] uppercase shadow-lg shadow-black/30 hover:shadow-[0_4px_24px_rgba(201,168,76,0.25)] active:scale-[0.97] cursor-pointer"
+            className="btn-primary group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 min-h-[48px] shadow-lg shadow-black/40 hover:shadow-[0_4px_24px_rgba(201,168,76,0.35)] cursor-pointer"
           >
             {calAdded ? (
               <>
-                <Check size={14} className="text-emerald-400 shrink-0" />
+                <Check size={15} className="text-emerald-800 shrink-0 font-bold" />
                 <span>Opening Google Calendar...</span>
               </>
             ) : (
               <>
-                <CalendarPlus size={14} className="text-champagne shrink-0" />
+                <CalendarPlus size={15} className="text-navy group-hover:scale-110 transition-transform duration-300 shrink-0" />
                 <span>Add to Google Calendar</span>
               </>
             )}

@@ -159,7 +159,7 @@ export default function ReceptionSection() {
 
           {/* Action CTAs - Responsive full width buttons on mobile */}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-3 w-full max-w-md mx-auto"
             initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.55, duration: 0.6 }}
@@ -168,9 +168,9 @@ export default function ReceptionSection() {
               href="https://maps.app.goo.gl/k9GBqDgpq7SM8PCz6"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-gold w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs py-3.5 px-6"
+              className="btn-primary group w-full sm:w-auto shadow-md hover:shadow-lg"
             >
-              <Navigation size={13} />
+              <Navigation size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300 shrink-0 text-navy" />
               <span>Get Directions</span>
             </a>
 
@@ -178,9 +178,9 @@ export default function ReceptionSection() {
               href={receptionCalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded border border-champagne/40 bg-white hover:bg-champagne/10 text-champagne-dark font-sans text-[10px] tracking-[2px] uppercase font-medium transition-all duration-300 shadow-sm active:scale-[0.98]"
+              className="btn-secondary group w-full sm:w-auto shadow-sm hover:shadow-md"
             >
-              <CalendarPlus size={13} />
+              <CalendarPlus size={14} className="group-hover:scale-110 transition-transform duration-300 shrink-0 text-champagne-dark" />
               <span>Add to Calendar</span>
             </a>
           </motion.div>

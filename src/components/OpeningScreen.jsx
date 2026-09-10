@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useMemo } from 'react';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 const FloatingParticle = ({ delay, x, size, duration, tx }) => (
@@ -167,22 +167,44 @@ export default function OpeningScreen({ onOpen }) {
           Sunday &bull; 25 October 2026 &bull; Malappuram
         </motion.p>
 
-        {/* Button CTA */}
-        <motion.button
-          className="btn-gold group relative cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
-          onClick={onOpen}
+        {/* Prominent Primary CTA Button */}
+        <motion.div
+          className="relative inline-flex flex-col items-center mt-2"
           initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 18 }}
           animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-          transition={{ delay: 1.45, duration: 0.8 }}
-          whileHover={prefersReducedMotion ? {} : { scale: 1.04 }}
-          whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
+          transition={{ delay: 1.4, duration: 0.8 }}
         >
-          <span className="relative z-10 flex items-center gap-2">
-            <Sparkles size={13} className="text-champagne animate-spin-slow" />
-            Open Invitation
-            <Sparkles size={13} className="text-champagne animate-spin-slow" />
-          </span>
-        </motion.button>
+          {/* Soft breathing glow halo ring */}
+          <div className="absolute -inset-1.5 rounded-full cta-breathing pointer-events-none opacity-80" />
+
+          <motion.button
+            className="btn-primary btn-shimmer relative z-10 cursor-pointer text-xs md:text-sm tracking-[2.8px] sm:tracking-[3.5px] py-4 px-9 sm:px-11 min-h-[52px] shadow-xl group border border-white/70 active:scale-[0.97]"
+            onClick={onOpen}
+            whileHover={prefersReducedMotion ? {} : { scale: 1.03 }}
+            whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
+            aria-label="Open wedding invitation"
+          >
+            <span className="relative z-10 flex items-center gap-3">
+              <Sparkles size={14} className="text-navy/60 group-hover:rotate-12 transition-transform duration-300 shrink-0" />
+              <span className="font-semibold uppercase text-navy">Open Invitation</span>
+              <ArrowRight size={15} className="text-navy/70 group-hover:translate-x-1 transition-transform duration-300 shrink-0" />
+            </span>
+          </motion.button>
+
+          {/* Elegant "Tap to begin" micro-cue */}
+          <motion.div
+            className="mt-4 flex items-center gap-2 select-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.65, duration: 0.8 }}
+          >
+            <span className="w-5 h-px bg-champagne/45" />
+            <span className="font-serif-display italic text-xs sm:text-sm text-charcoal-light/85 tracking-wide">
+              Tap to enter celebration
+            </span>
+            <span className="w-5 h-px bg-champagne/45" />
+          </motion.div>
+        </motion.div>
       </div>
     </motion.div>
   );
