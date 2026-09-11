@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect } from 'react';
-import { ChevronDown, Calendar, MapPin } from 'lucide-react';
+import { ChevronDown, Calendar } from 'lucide-react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 export default function HeroSection() {
@@ -66,7 +66,7 @@ export default function HeroSection() {
           src="/images/couple-1.jpg"
           alt="Jithin & Sreelakshmi – Wedding Portrait"
           className="w-full h-full object-cover"
-          style={{ objectPosition: 'center 22%' }}
+          style={{ objectPosition: 'center 66%' }}
           initial={
             prefersReducedMotion
               ? { opacity: 0 }
@@ -131,12 +131,12 @@ export default function HeroSection() {
         </div>
       )}
 
-      {/* Robust Multi-Stop Gradient Overlays for Guaranteed 100% Mobile & Desktop Contrast */}
+      {/* Crystal-Clear Editorial Gradient: transparent across the couple for maximum visibility, gentle fade only at bottom */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(13,27,42,0.2) 0%, rgba(13,27,42,0.15) 30%, rgba(13,27,42,0.7) 58%, rgba(13,27,42,0.94) 80%, rgba(13,27,42,0.99) 100%)',
+            'linear-gradient(to bottom, rgba(13,27,42,0.18) 0%, transparent 22%, transparent 48%, rgba(13,27,42,0.32) 68%, rgba(13,27,42,0.72) 86%, rgba(13,27,42,0.96) 100%)',
         }}
       />
 
@@ -201,9 +201,9 @@ export default function HeroSection() {
           <div className="w-8 sm:w-16 h-px bg-gradient-to-l from-transparent to-champagne" />
         </motion.div>
 
-        {/* Date & Location Line */}
+        {/* Date Line */}
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-white text-xs sm:text-sm mb-2.5 sm:mb-4"
+          className="flex items-center justify-center text-white text-xs sm:text-sm mb-2.5 sm:mb-4"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: prefersReducedMotion ? 0.35 : 1.25, duration: 0.8 }}
@@ -211,11 +211,6 @@ export default function HeroSection() {
           <span className="flex items-center gap-1.5 tracking-[1.5px] uppercase font-sans text-[10px] sm:text-xs text-white/95 font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
             <Calendar size={12} className="text-champagne shrink-0" />
             Sunday, 25 October 2026
-          </span>
-          <span className="text-champagne/60 hidden xs:inline">&bull;</span>
-          <span className="flex items-center gap-1.5 tracking-[1.5px] uppercase font-sans text-[10px] sm:text-xs text-white/90 font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
-            <MapPin size={12} className="text-champagne shrink-0" />
-            Malappuram, Kerala
           </span>
         </motion.div>
 

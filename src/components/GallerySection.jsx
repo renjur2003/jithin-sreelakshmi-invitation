@@ -52,15 +52,15 @@ export default function GallerySection({ onImageClick }) {
           </motion.div>
         </div>
 
-        {/* Editorial 6-Photo Grid (2 cols mobile, 3 cols desktop) */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 md:gap-7">
+        {/* Editorial 2-Photo Curated Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-2xl sm:max-w-3xl mx-auto gap-4 sm:gap-6 md:gap-8">
           {photos.map((photo, index) => (
             <motion.div
               key={photo.id || index}
               className="relative group cursor-pointer overflow-hidden rounded-lg sm:rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 border border-champagne/25 bg-white"
               initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 25 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 + index * 0.08, duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ delay: 0.1 + index * 0.12, duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
               onClick={() => onImageClick(photo.src, index)}
             >
               <div className="overflow-hidden aspect-[3/4] relative">
@@ -86,7 +86,7 @@ export default function GallerySection({ onImageClick }) {
 
         {/* Caption Hint */}
         <p className="text-center font-sans text-[10px] sm:text-[11px] tracking-[2px] uppercase text-charcoal-light mt-6 sm:mt-8">
-          Tap any photo to view full gallery
+          Tap any photo to view full screen
         </p>
       </div>
     </section>

@@ -163,12 +163,12 @@ export default function OpeningScreen({ onOpen }) {
 
           {/* Intro Heading */}
           <motion.p
-            className="font-sans text-[11px] md:text-xs tracking-[4px] md:tracking-[5px] uppercase text-charcoal-light font-medium mb-4"
+            className="font-serif-display italic text-sm sm:text-base text-charcoal-light/90 font-light leading-relaxed text-center mb-4 px-2 max-w-xs"
             initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 15 }}
             animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.8 }}
           >
-            Together with their families
+            As we begin our life together, we warmly invite you to share in the joy of our wedding and bless our new beginning.
           </motion.p>
 
           {/* Ornate Divider */}
@@ -216,14 +216,14 @@ export default function OpeningScreen({ onOpen }) {
             </motion.h1>
           </div>
 
-          {/* Date & Location */}
+          {/* Date */}
           <motion.p
             className="font-sans text-[10px] md:text-xs tracking-[4px] uppercase text-champagne-dark font-medium mt-6 mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.25, duration: 0.8 }}
           >
-            Sunday &bull; 25 October 2026 &bull; Malappuram
+            Sunday &bull; 25 October 2026
           </motion.p>
 
           {/* Primary CTA Button (Step 1: Press + Champagne Gold Radiant Glow) */}

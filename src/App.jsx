@@ -125,7 +125,7 @@ function App() {
       {/* Hidden Audio Element pointing to uploaded wedding music */}
       <audio
         ref={audioRef}
-        src="/audio/wedding-music.mp3"
+        src="/audio/wedding-music.mp4"
         loop
         preload="auto"
       />

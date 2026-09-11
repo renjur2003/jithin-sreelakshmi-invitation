@@ -190,7 +190,7 @@ export default function FinalSection() {
           </button>
         </motion.div>
 
-        {/* 6. Family Lineage Acknowledgement */}
+        {/* 6. Warm Invitation to Friends & Family */}
         <motion.div
           className="pt-6 sm:pt-8 border-t border-champagne/20 w-full max-w-sm"
           initial={{ opacity: 0 }}
@@ -198,13 +198,13 @@ export default function FinalSection() {
           transition={{ delay: 1.05, duration: 0.8 }}
         >
           <p className="font-sans text-[9px] sm:text-[10px] tracking-[3px] uppercase text-champagne font-medium mb-1.5">
-            With Love & Happiness
+            Cordially Invited
           </p>
           <p className="font-sans text-xs sm:text-sm tracking-[2px] text-white/95 font-light mb-1">
-            Anjima Athul & Athul Mathur
+            All Our Dear Friends & Family
           </p>
-          <p className="font-serif-display text-sm sm:text-base italic text-white/70 font-light">
-            and the entire family
+          <p className="font-serif-display text-sm sm:text-base italic text-white/75 font-light">
+            are warmly invited to join and celebrate this special day with us
           </p>
         </motion.div>
 

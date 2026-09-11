@@ -49,22 +49,10 @@ export const weddingData = {
 
   photos: [
     {
-      id: 1,
-      src: '/images/couple-1.jpg',
-      alt: 'Jithin & Sreelakshmi – Two Hearts One Journey',
-      objectPosition: 'center 30%',
-    },
-    {
       id: 2,
       src: '/images/couple-2.jpg',
       alt: 'Jithin & Sreelakshmi – A Beautiful Chapter Together',
       objectPosition: 'center 40%',
-    },
-    {
-      id: 3,
-      src: '/images/couple-3.jpg',
-      alt: 'Jithin & Sreelakshmi – Under Golden Arches',
-      objectPosition: 'center 35%',
     },
     {
       id: 4,
@@ -72,25 +60,14 @@ export const weddingData = {
       alt: 'Jithin & Sreelakshmi – Mountain Embrace',
       objectPosition: 'center 25%',
     },
-    {
-      id: 5,
-      src: '/images/couple-5.jpg',
-      alt: 'Jithin & Sreelakshmi – Better Together',
-      objectPosition: 'center 30%',
-    },
-    {
-      id: 6,
-      src: '/images/couple-6.jpg',
-      alt: 'Jithin & Sreelakshmi – Some Stories Never End',
-      objectPosition: 'center 35%',
-    },
   ],
 
   closing: {
     message: 'Your presence and blessings will make our celebration complete.',
     sharedBy: {
-      label: 'Sharing Happiness',
-      names: 'Anjima Athul & Athul Mathur',
+      label: 'Cordially Invited',
+      names: 'All Our Dear Friends & Family',
+      subtext: 'are warmly invited to join and celebrate this special day with us',
     },
   },
 };
