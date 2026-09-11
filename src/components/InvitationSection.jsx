@@ -77,35 +77,19 @@ export default function InvitationSection() {
               />
             </motion.div>
 
-            {/* Groom's Family Details */}
-            <motion.div
-              className="mb-6 sm:mb-8"
+            {/* Invitation Prose */}
+            <motion.p
+              className="font-serif-display italic text-base xs:text-lg sm:text-xl md:text-2xl text-navy font-light leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto"
               variants={fadeUp}
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
               custom={1}
             >
-              <p className="font-sans text-[11px] xs:text-xs sm:text-sm tracking-[1.5px] sm:tracking-[2px] uppercase text-navy font-semibold mb-1">
-                Mrs. Shylaya Sajeev & Mr. Sajeev Kumar (Late)
-              </p>
-              <p className="font-sans text-[10px] xs:text-[11px] sm:text-xs tracking-[0.5px] sm:tracking-[1px] text-charcoal-light max-w-md mx-auto leading-relaxed">
-                Mundekottupadikkal (H), Sopanam 35, Palakkodu, Angadippuram, Malappuram
-              </p>
-            </motion.div>
-
-            {/* Invitation Prose */}
-            <motion.p
-              className="font-serif-display text-base xs:text-lg sm:text-xl md:text-2xl text-navy font-light leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto"
-              variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              custom={2}
-            >
-              cordially invite you with family & friends to celebrate the auspicious wedding ceremony & reception of their beloved son
+              As we begin our life together, we warmly invite you to share in the joy of our wedding and bless our new beginning.
             </motion.p>
 
             {/* Central Couple Name Display with Animated Gold Border Draw */}
-            <div className="my-4 sm:my-6 py-3 sm:py-4 relative">
+            <div className="my-6 sm:my-8 py-4 sm:py-6 relative">
               {/* Top border line with animated draw */}
               <motion.div
                 className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/50 to-transparent"
@@ -120,17 +104,17 @@ export default function InvitationSection() {
                 variants={fadeUp}
                 initial="hidden"
                 animate={isInView ? 'visible' : 'hidden'}
-                custom={3}
+                custom={2}
               >
                 Jithin
               </motion.h2>
 
               <motion.div
-                className="flex items-center justify-center gap-2 sm:gap-3 my-1 sm:my-2"
+                className="flex items-center justify-center gap-2 sm:gap-3 my-2 sm:my-3"
                 variants={fadeUp}
                 initial="hidden"
                 animate={isInView ? 'visible' : 'hidden'}
-                custom={4}
+                custom={3}
               >
                 <div className="w-8 sm:w-12 h-px bg-champagne/40" />
                 <span className="font-serif-display italic text-xl sm:text-2xl text-champagne-dark">
@@ -144,7 +128,7 @@ export default function InvitationSection() {
                 variants={fadeUp}
                 initial="hidden"
                 animate={isInView ? 'visible' : 'hidden'}
-                custom={5}
+                custom={4}
               >
                 Sreelakshmi
               </motion.h2>
@@ -159,32 +143,13 @@ export default function InvitationSection() {
               />
             </div>
 
-            {/* Bride's Family Details */}
-            <motion.div
-              className="mt-4 sm:mt-6 mb-6 sm:mb-8"
-              variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              custom={6}
-            >
-              <p className="font-sans text-[10px] sm:text-[11px] tracking-[2px] uppercase text-champagne-dark font-medium mb-1">
-                Daughter of
-              </p>
-              <p className="font-sans text-[11px] xs:text-xs sm:text-sm tracking-[1.5px] sm:tracking-[2px] uppercase text-navy font-semibold mb-1">
-                Mrs. Gayathri Mohanan & Mr. Mohanan VK
-              </p>
-              <p className="font-sans text-[10px] xs:text-[11px] sm:text-xs tracking-[0.5px] sm:tracking-[1px] text-charcoal-light max-w-md mx-auto leading-relaxed">
-                Vadakkekara (H), Pang Chendi, Malappuram
-              </p>
-            </motion.div>
-
             {/* Heartfelt Note */}
             <motion.div
               className="pt-4 sm:pt-6 border-t border-champagne/20"
               variants={fadeUp}
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
-              custom={7}
+              custom={5}
             >
               <p className="font-serif-display text-sm sm:text-base md:text-lg text-charcoal-light font-light italic leading-relaxed">
                 “Your presence and gracious blessings will be the greatest gift as they embark on this joyous journey of love and togetherness.”

@@ -65,8 +65,7 @@ export default function HeroSection() {
         <motion.img
           src="/images/couple-1.jpg"
           alt="Jithin & Sreelakshmi – Wedding Portrait"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: 'center 66%' }}
+          className="w-full h-full object-cover object-[center_72%] md:object-[center_66%]"
           initial={
             prefersReducedMotion
               ? { opacity: 0 }
@@ -131,12 +130,12 @@ export default function HeroSection() {
         </div>
       )}
 
-      {/* Crystal-Clear Editorial Gradient: transparent across the couple for maximum visibility, gentle fade only at bottom */}
+      {/* Gradient overlay – strong at top on mobile to anchor sky, then clears for couple visibility, darkens at bottom for text contrast */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(13,27,42,0.18) 0%, transparent 22%, transparent 48%, rgba(13,27,42,0.32) 68%, rgba(13,27,42,0.72) 86%, rgba(13,27,42,0.96) 100%)',
+            'linear-gradient(to bottom, rgba(13,27,42,0.45) 0%, rgba(13,27,42,0.10) 25%, transparent 45%, rgba(13,27,42,0.28) 65%, rgba(13,27,42,0.72) 83%, rgba(13,27,42,0.97) 100%)',
         }}
       />
 
