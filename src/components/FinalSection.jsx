@@ -20,7 +20,7 @@ export default function FinalSection() {
     'Dear Jithin & Sreelakshmi, Congratulations and best wishes on your wedding! May your life together be filled with boundless joy, love, and laughter. Hearty blessings!'
   )}`;
 
-  const invitationUrl = 'https://jithin-sreelakshmi-invitation.vercel.app/';
+  const invitationUrl = 'https://jithin-sreelakshmi-invitation.vercel.app/?invite';
 
   const shareMessage = `💍✨ Sreelakshmi Weds Jithin ✨💍
 
@@ -45,7 +45,6 @@ With love & gratitude ❤️`;
         await navigator.share({
           title: '💍✨ Sreelakshmi Weds Jithin ✨💍',
           text: shareMessage,
-          url: invitationUrl,
         });
         return;
       } catch (err) {
