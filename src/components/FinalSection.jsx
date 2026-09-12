@@ -20,23 +20,46 @@ export default function FinalSection() {
     'Dear Jithin & Sreelakshmi, Congratulations and best wishes on your wedding! May your life together be filled with boundless joy, love, and laughter. Hearty blessings!'
   )}`;
 
-  const handleShare = async () => {
-    const shareData = {
-      title: 'Jithin & Sreelakshmi | Wedding Invitation',
-      text: 'You are cordially invited to celebrate the wedding of Jithin & Sreelakshmi on Sunday, 25 October 2026.',
-      url: window.location.href,
-    };
+  const invitationUrl = 'https://jithin-sreelakshmi-invitation.vercel.app/';
 
+  const shareMessage = `💍✨ Sreelakshmi Weds Jithin ✨💍
+
+You are lovingly invited to join us on our special day 🤍
+
+🎉 Sangeeth Night:
+📅 Saturday, 24 Oct 2026
+⏰ 6:00PM
+
+🎉 WEDDING:
+📅 Sunday, 25 Oct 2026
+⏰ 10:00AM
+
+👉 View Invitation:
+${invitationUrl}
+
+With love & gratitude ❤️`;
+
+  const handleShare = async () => {
     if (navigator.share) {
       try {
-        await navigator.share(shareData);
+        await navigator.share({
+          title: '💍✨ Sreelakshmi Weds Jithin ✨💍',
+          text: shareMessage,
+        });
+        return;
       } catch (err) {
-        // user cancelled or fallback
+        if (err.name === 'AbortError') return;
       }
-    } else {
-      navigator.clipboard.writeText(window.location.href);
+    }
+
+    // Fallback: Copy invitation message to clipboard
+    try {
+      await navigator.clipboard.writeText(shareMessage);
       setCopied(true);
-      setTimeout(() => setCopied(false), 3000);
+      setTimeout(() => setCopied(false), 3500);
+    } catch {
+      // Fallback directly to WhatsApp
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}`, '_blank');
     }
   };
 
@@ -179,7 +202,7 @@ export default function FinalSection() {
             {copied ? (
               <>
                 <Check size={15} className="text-emerald-400 shrink-0" />
-                <span>Link Copied!</span>
+                <span>Invitation Copied!</span>
               </>
             ) : (
               <>
