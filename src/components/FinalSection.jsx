@@ -45,6 +45,7 @@ With love & gratitude ❤️`;
         await navigator.share({
           title: '💍✨ Sreelakshmi Weds Jithin ✨💍',
           text: shareMessage,
+          url: invitationUrl,
         });
         return;
       } catch (err) {
