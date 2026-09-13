@@ -20,30 +20,27 @@ export default function FinalSection() {
     'Dear Jithin & Sreelakshmi, Congratulations and best wishes on your wedding! May your life together be filled with boundless joy, love, and laughter. Hearty blessings!'
   )}`;
 
-  const invitationUrl = 'https://jithin-sreelakshmi-invitation.vercel.app/?invite';
+  const invitationUrl = 'https://jithin-sreelakshmi-invitation.vercel.app/';
 
-  const shareMessage = `💍✨ Sreelakshmi Weds Jithin ✨💍
+  const shareMessage = `As we begin a beautiful new chapter of our lives, we warmly invite you and your family to share in the joy of our wedding and bless us as we begin this journey together. 💕✨
 
-You are lovingly invited to join us on our special day 🤍
+💍 JITHIN WEDS SREELAKSHMI 💍
 
-🎉 Sangeeth Night:
-📅 Saturday, 24 Oct 2026
-⏰ 6:00PM
+🎉 WEDDING
+📅 Sunday, 25 October 2026
 
-🎉 WEDDING:
-📅 Sunday, 25 Oct 2026
-⏰ 10:00AM
-
-👉 View Invitation:
+💌 View Our Digital Invitation:
 ${invitationUrl}
 
-With love & gratitude ❤️`;
+Your presence, love, and blessings would mean so much to us. ❤️
+
+With love & gratitude, 💕`;
 
   const handleShare = async () => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: '💍✨ Sreelakshmi Weds Jithin ✨💍',
+          title: '💍 JITHIN WEDS SREELAKSHMI 💍',
           text: shareMessage,
         });
         return;
