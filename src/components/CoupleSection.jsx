@@ -103,7 +103,7 @@ export default function CoupleSection() {
                   Jithin
                 </h3>
                 <p className="font-sans text-[10px] sm:text-[11px] text-charcoal-light leading-snug">
-                  S/o Mrs. Shylaya Sajeev & Late Mr. Sajeev Kumar
+                  S/o Mrs.Shylaja Sajeev & Late Mr. Sajeev Kumar
                 </p>
               </div>
 

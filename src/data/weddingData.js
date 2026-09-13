@@ -18,7 +18,7 @@ export const weddingData = {
 
   families: {
     groom: {
-      parents: 'Mrs. Shylaya Sajeev & Mr. Sajeev Kumar (Late)',
+      parents: 'Mrs. Shylaja Sajeev & Late Mr. Sajeev Kumar',
       address: 'Mundekottupadikkal (H), Sopanam 35, Palakkodu, Angadippuram, Malappuram.',
     },
     bride: {
